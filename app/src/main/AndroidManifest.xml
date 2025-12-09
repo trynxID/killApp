@@ -5,6 +5,9 @@
     <!-- Permission to query all installed packages (Android 11+) -->
     <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES"
         tools:ignore="QueryAllPackagesPermission" />
+    
+    <!-- Permission to show notifications -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
     <application
         android:allowBackup="true"

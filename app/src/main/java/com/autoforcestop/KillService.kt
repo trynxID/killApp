@@ -9,6 +9,7 @@ import android.provider.Settings
 import android.util.Log
 import android.view.accessibility.AccessibilityEvent
 import android.view.accessibility.AccessibilityNodeInfo
+import android.widget.Toast
 
 /**
  * Accessibility Service that monitors app switching and automatically
@@ -91,6 +92,9 @@ class KillService : AccessibilityService() {
         
         Log.d(TAG, "Starting kill sequence for: $packageName")
         
+        // Show notification that force stop is starting
+        showToast("Force stopping $packageName...")
+        
         // Step A: Open app settings
         try {
             val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS).apply {
@@ -101,6 +105,7 @@ class KillService : AccessibilityService() {
             Log.d(TAG, "Opened settings for: $packageName")
         } catch (e: Exception) {
             Log.e(TAG, "Failed to open settings", e)
+            showToast("Failed to force stop $packageName")
             resetKillSequence()
         }
     }
@@ -245,6 +250,10 @@ class KillService : AccessibilityService() {
         try {
             Log.d(TAG, "Performing back action")
             performGlobalAction(GLOBAL_ACTION_BACK)
+            
+            // Show success notification
+            val appName = targetPackageToKill?.substringAfterLast('.') ?: "App"
+            showToast("✓ $appName force stopped!")
         } catch (e: Exception) {
             Log.e(TAG, "Error performing back action", e)
         } finally {
@@ -268,6 +277,15 @@ class KillService : AccessibilityService() {
         Log.d(TAG, "KillService interrupted")
     }
 
+    /**
+     * Show toast notification
+     */
+    private fun showToast(message: String) {
+        handler.post {
+            Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+        }
+    }
+    
     override fun onDestroy() {
         super.onDestroy()
         Log.d(TAG, "KillService destroyed")
