@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#FFFFFF">
+
+    <!-- Header -->
+    <TextView
+        android:id="@+id/tvHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/header_text"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#212121"
+        android:paddingBottom="8dp" />
+
+    <!-- Instructions -->
+    <TextView
+        android:id="@+id/tvInstructions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/instructions_text"
+        android:textSize="14sp"
+        android:textColor="#757575"
+        android:paddingBottom="16dp" />
+
+    <!-- Service Status -->
+    <TextView
+        android:id="@+id/tvServiceStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/service_disabled"
+        android:textSize="14sp"
+        android:textColor="#D32F2F"
+        android:textStyle="bold"
+        android:paddingBottom="8dp" />
+
+    <!-- Enable Service Button -->
+    <Button
+        android:id="@+id/btnEnableService"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/enable_service"
+        android:textAllCaps="false"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Divider -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#E0E0E0"
+        android:layout_marginBottom="16dp" />
+
+    <!-- App List Label -->
+    <TextView
+        android:id="@+id/tvAppListLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/app_list_label"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#212121"
+        android:paddingBottom="8dp" />
+
+    <!-- RecyclerView for App List -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewApps"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scrollbars="vertical" />
+
+</LinearLayout>

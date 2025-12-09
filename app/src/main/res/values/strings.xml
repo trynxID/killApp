@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Auto Force Stop</string>
+    
+    <!-- Main Activity Strings -->
+    <string name="header_text">Auto Force Stop</string>
+    <string name="instructions_text">Pilih aplikasi yang ingin di-force stop otomatis ketika Anda keluar dari aplikasi tersebut.</string>
+    <string name="service_disabled">Service: TIDAK AKTIF</string>
+    <string name="service_enabled">Service: AKTIF ✓</string>
+    <string name="enable_service">Aktifkan Accessibility Service</string>
+    <string name="app_list_label">Daftar Aplikasi</string>
+    <string name="app_icon_desc">App Icon</string>
+    
+    <!-- Accessibility Service -->
+    <string name="accessibility_service_description">Service ini memantau aktivitas aplikasi dan secara otomatis melakukan force stop pada aplikasi yang dipilih ketika Anda berpindah ke aplikasi lain. Ini membantu membersihkan RAM untuk performa yang lebih baik.</string>
+    
+    <!-- Dialogs -->
+    <string name="dialog_enable_service_title">Aktifkan Accessibility Service</string>
+    <string name="dialog_enable_service_message">Untuk menggunakan fitur auto force stop, Anda perlu mengaktifkan Accessibility Service di Settings.\n\nCari "Auto Force Stop" dan aktifkan.</string>
+    <string name="open_settings">Buka Settings</string>
+    <string name="cancel">Batal</string>
+</resources>
